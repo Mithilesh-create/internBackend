@@ -25,4 +25,6 @@ async function main() {
   return "done.";
 }
 
-main().then(console.log).catch(console.error);
+main()
+  .then(console.log)
+  .catch(console.error);
