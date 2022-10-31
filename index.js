@@ -14,7 +14,7 @@ async function main() {
   await client.connect();
   console.log("Connected successfully to server...");
   const db = client.db(dbName);
-  const collection = db.collection("signNumCollection");
+  const collection = db.collection(process.env.DB_COLLECTION_NAME);
   app.get("/", async (req, res) => {
     const findResult = await collection.find({}).toArray();
     res.status(200).send(findResult);
