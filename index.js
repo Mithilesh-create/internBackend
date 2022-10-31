@@ -6,9 +6,10 @@ const url = process.env.DB_CONNECT;
 const client = new MongoClient(url);
 
 const app = express();
+app.use(express.json());
 const port = process.env.PORT || 8000;
 // Database Name
-const dbName = process.env.DBNAME;
+const dbName = process.env.DB_NAME;
 
 async function main() {
   await client.connect();
@@ -25,6 +26,4 @@ async function main() {
   return "done.";
 }
 
-main()
-  .then(console.log)
-  .catch(console.error);
+main().then(console.log).catch(console.error);
