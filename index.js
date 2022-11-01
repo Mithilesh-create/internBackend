@@ -7,7 +7,7 @@ const client = new MongoClient(url);
 
 const app = express();
 app.use(express.json());
-const port = process.env.PORT || 8000;
+const port = process.env.PORT;
 // Database Name
 const dbName = process.env.DB_NAME;
 
